@@ -1,4 +1,4 @@
-package com.abc.test;
+package com.abc.offer;
 /**
  * 定义二叉树的类
  * @author Jerry

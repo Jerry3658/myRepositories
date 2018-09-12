@@ -1,4 +1,5 @@
-package com.abc.test;
+package com.abc.offer;
+
 /**
  * 面试题7：重建二叉树
  * 题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。
