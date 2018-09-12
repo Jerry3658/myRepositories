@@ -1,6 +1,6 @@
 package com.abc.test;
 /**
- * 定义二叉树
+ * 定义二叉树的类
  * @author Jerry
  *
  */
