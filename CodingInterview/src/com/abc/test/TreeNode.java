@@ -1,5 +1,9 @@
 package com.abc.test;
-
+/**
+ * 二叉树的定义
+ * @author Jerry
+ *
+ */
 public class TreeNode {
 	int val;
 	TreeNode left;
