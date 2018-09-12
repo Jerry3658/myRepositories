@@ -3,7 +3,7 @@ package com.abc.test;
 public class ConstructBinaryTree {
 
 	/**
-	 * ÖØ½¨¶þ²æÊ÷µÄ·½·¨
+	 * é‡å»ºäºŒå‰æ ‘çš„æ–¹æ³•
 	 * @param pre
 	 * @param in
 	 * @return
@@ -13,7 +13,7 @@ public class ConstructBinaryTree {
 	}
 	
 	/**
-	 * ÖØÐ´ÖØ½¨¶þ²æÊ÷µÄ·½·¨
+	 * é‡å†™é‡å»ºäºŒå‰æ ‘çš„æ–¹æ³•
 	 * @param pre
 	 * @param startPre
 	 * @param endPre
@@ -25,13 +25,13 @@ public class ConstructBinaryTree {
 	public TreeNode reConstructBinaryTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn) {
 		if(startPre > endPre || startIn > endIn)
 			return null;
-		// ¸ù½Úµã
+		// æ ¹èŠ‚ç‚¹
 		TreeNode root = new TreeNode(pre[startPre]);
 		for(int i = 0; i <= endIn; i++) {
 			if(pre[startPre] == in[i]) {
-				// ×ó×ÓÊ÷
+				// å·¦å­æ ‘
 				root.left = reConstructBinaryTree(pre, startPre + 1, startPre + i - startIn, in, startIn, i - 1);
-				// ÓÒ×ÓÊ÷
+				// å³å­æ ‘
 				root.right = reConstructBinaryTree(pre, startPre + i - startIn + 1, endPre, in, i + 1, endIn);
 				break;
 			}
