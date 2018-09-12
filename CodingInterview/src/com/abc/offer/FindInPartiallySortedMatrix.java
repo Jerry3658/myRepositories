@@ -14,7 +14,7 @@ public class FindInPartiallySortedMatrix {
 	 * @param array
 	 * @return
 	 */
-	public static Boolean Find(int target, int[][] array) {
+	public static boolean Find(int target, int[][] array) {
 		int row = 0;
 		int column = array.length - 1;
 		while (row <= array.length - 1 && column > 0) {
@@ -34,7 +34,7 @@ public class FindInPartiallySortedMatrix {
 	 * @param array
 	 * @return
 	 */
-	public static Boolean find(int target, int[][] array) {
+	public static boolean find(int target, int[][] array) {
 		int row = array.length - 1;
 		int column = 0;
 		while (row > 0 && column <= array.length - 1) {
