@@ -43,6 +43,7 @@ public class TwoSum {
 		}
 		System.out.println(sb.toString());
 		*/
+		// 打印数组的第二种方式：使用Arrays工具类的toString方法
 		System.out.println(Arrays.toString(twoSum));
 	}
 }
