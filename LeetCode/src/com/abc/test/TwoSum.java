@@ -22,14 +22,26 @@ public class TwoSum {
 	public static void main(String[] args) {
 		int[] arr = { 2, 7, 11, 15 };
 		int[] twoSum = twoSum(arr, 9);
-		/*打印数组的另一种方式
+		/*打印数组的第一种方式
 		System.out.print("[");
 		for(int i = 0; i < twoSum.length; i++) {
-			if(i != twoSum.length -1)
+			if(i != twoSum.length - 1)
 				System.out.print(twoSum[i] + ", ");
 			else
 				System.out.println(twoSum[i] + "]");
 		}
+		*/
+		/*打印数组的第二种方式
+		if(twoSum.length == 0)
+			System.out.println("[]");
+		StringBuilder sb = new StringBuilder("[");
+		for(int i = 0; i < twoSum.length; i++) {
+			if(i != twoSum.length - 1)
+				sb.append(twoSum[i] + ", ");
+			else
+				sb.append(twoSum[i] + "]");
+		}
+		System.out.println(sb.toString());
 		*/
 		System.out.println(Arrays.toString(twoSum));
 	}
