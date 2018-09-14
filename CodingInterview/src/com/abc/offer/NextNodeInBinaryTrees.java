@@ -11,24 +11,24 @@ public class NextNodeInBinaryTrees {
 
 		if (pNode == null)
 			return null;
-		// 节点有右子树
+		// 结点有右子树
 		if (pNode.right != null) {
 			pNode = pNode.right;
 			while (pNode.left != null) {
 				pNode = pNode.left;
 			}
 			return pNode;
-			// 节点没有右子树
+			// 结点没有右子树
 		} else if (pNode.next != null && pNode == pNode.next.left) {
 			return pNode.next;
-			// 节点没有右子树，还是父节点的右子节点
+			// 结点没有右子树，还是父结点的右子结点
 		} else if (pNode.next != null && pNode == pNode.next.right) {
 			while (pNode.next != null && pNode != pNode.next.left) {
 				pNode = pNode.next;
 			}
 			return pNode.next;
 		} else
-			// 节点无父节点，即为根节点
+			// 结点无父结点，即为根结点
 			return pNode.next;
 	}
 }
