@@ -17,13 +17,13 @@ public class Fibonacci {
 	 * @return
 	 */
 	public static int Fibonacci1(int n) {
-		if(n <= 0)
+		if (n <= 0)
 			return 0;
-		else if(n == 1 || n == 2)
+		else if (n == 1 || n == 2)
 			return 1;
 		else
-			return Fibonacci1(n-1) + Fibonacci1(n-2);
-    }
+			return Fibonacci1(n - 1) + Fibonacci1(n - 2);
+	}
 	
 	/**
 	 * 方法二：循环
@@ -34,20 +34,21 @@ public class Fibonacci {
 		int preNum = 1;
 		int prePreNum = 0;
 		int result = 0;
-		if(n <= 0)
+		if (n <= 0)
 			return 0;
-		if(n == 1)
+		if (n == 1)
 			return 1;
-		for(int i = 2; i <= n; i++) {
+		for (int i = 2; i <= n; i++) {
 			result = preNum + prePreNum;
 			prePreNum = preNum;
 			preNum = result;
 		}
 		return result;
-    }
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		while(sc.hasNext()) {
+		while (sc.hasNext()) {
 			System.out.println(Fibonacci1(sc.nextInt()));
 		}
 	}
