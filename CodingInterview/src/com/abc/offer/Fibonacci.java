@@ -16,13 +16,13 @@ public class Fibonacci {
 	 * @param n
 	 * @return
 	 */
-	public static int Fibonacci(int n) {
+	public static int Fibonacci1(int n) {
 		if(n <= 0)
 			return 0;
 		else if(n == 1 || n == 2)
 			return 1;
 		else
-			return Fibonacci(n-1) + Fibonacci(n-2);
+			return Fibonacci1(n-1) + Fibonacci1(n-2);
     }
 	
 	/**
@@ -48,7 +48,7 @@ public class Fibonacci {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		while(sc.hasNext()) {
-			System.out.println(Fibonacci(sc.nextInt()));
+			System.out.println(Fibonacci1(sc.nextInt()));
 		}
 	}
 
