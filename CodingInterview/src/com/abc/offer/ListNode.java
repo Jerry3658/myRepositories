@@ -5,6 +5,7 @@ package com.abc.offer;
  *
  */
 public class ListNode {
+	
 	int val;
 	ListNode next = null;
 
@@ -12,7 +13,10 @@ public class ListNode {
 		this.val = val;
 	}
 
-	public void setNext(ListNode next) {
+	public ListNode(int val, ListNode next) {
+		super();
+		this.val = val;
 		this.next = next;
 	}
+
 }

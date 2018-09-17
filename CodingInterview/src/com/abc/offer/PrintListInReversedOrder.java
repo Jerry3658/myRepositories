@@ -25,17 +25,13 @@ public class PrintListInReversedOrder {
 	}
 
 	public static void main(String[] args) {
-		ListNode node1 = new ListNode(1);
-		ListNode node2 = new ListNode(2);
-		ListNode node3 = new ListNode(3);
-		ListNode node4 = new ListNode(4);
+		
 		ListNode node5 = new ListNode(5);
-
-		node1.setNext(node2);
-		node2.setNext(node3);
-		node3.setNext(node4);
-		node4.setNext(node5);
-
+		ListNode node4 = new ListNode(4, node5);
+		ListNode node3 = new ListNode(3, node4);
+		ListNode node2 = new ListNode(2, node3);
+		ListNode node1 = new ListNode(1, node2);
+		
 		ArrayList<Integer> list = printListFromTailToHead(node1);
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
