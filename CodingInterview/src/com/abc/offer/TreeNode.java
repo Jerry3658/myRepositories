@@ -1,6 +1,6 @@
 package com.abc.offer;
 /**
- * 定义二叉树的类
+ * 链式二叉树结点
  * @author Jerry
  *
  */
