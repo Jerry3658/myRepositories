@@ -96,10 +96,10 @@ public class TraverseBinaryTree {
 	public static void main(String[] args) {
 		TraverseBinaryTree tree = new TraverseBinaryTree();
 		tree.preOrderTraverse(tree.root);
-		// tree.inOrderTraverse(tree.root);
-		// tree.postOrderTraverse(tree.root);
+//		tree.inOrderTraverse(tree.root);
+//		tree.postOrderTraverse(tree.root);
 		for (Node node : tree.list) {
-			System.out.println(node.data);
+			System.out.print(node.data);
 		}
 	}
 }
