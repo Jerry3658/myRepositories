@@ -1,7 +1,6 @@
 package com.abc.test;
 
 import java.util.Arrays;
-
 /**
  * 快速排序
  * @author Jerry
@@ -9,38 +8,66 @@ import java.util.Arrays;
  */
 public class QuickSort {
 
-	public int partition(int[] arr, int low, int high) {
+	private static int partition(int[] arr, int low, int high) {
+		// 指定左指针i和右指针j
+		int i = low;
+		int j = high;
+		// 将第一个数作为基准值，挖坑
 		int key = arr[low];
-		while (low < high) {
-			// 从high所指位置起向前搜索找到第一个小于key的数
-			while (low < high && arr[high] >= key)
-				--high;
-			arr[low] = arr[high];
-			// 从low所指位置起向后搜索找到第一个大于key的数
-			while (low < high && arr[low] <= key)
-				++low;
-			arr[high] = arr[low];
+		// 使用循环实现分区操作
+		while (i < j) {
+			// 1.从右向左移动j，找到第一个小于基准值的值 arr[j]
+			while (arr[j] >= key && i < j) {
+				j--;
+			}
+			// 2.将右侧找到小于基准数的值加入到左边的（坑）位置， 左指针向中间移动一个位置i++
+			if (i < j) {
+				arr[i] = arr[j];
+				i++;
+			}
+			// 3.从左向右移动i，找到第一个大于等于基准值的值 arr[i]
+			while (arr[i] < key && i < j) {
+				i++;
+			}
+			// 4.将左侧找到大于等于基准数的值加入到右边的（坑）位置， 右指针向中间移动一个位置j--
+			if (i < j) {
+				arr[j] = arr[i];
+				j--;
+			}
 		}
-		// 终止循环while循环之后low和high一定是相等的
-		arr[low] = key;
-		return low;
+		// 使用基准值填坑，这就是基准值的最终位置
+		arr[i] = key; // arr[j] = key;
+		// 返回基准值的位置索引
+		return i; // return j;
 	}
 
-	public void quickSort(int[] arr, int low, int high) {
+	private static void quickSort(int[] arr, int low, int high) {
+		// 递归的结束条件
 		if (low < high) {
-			// pivotloc:枢轴的位置
-			int pivotloc = partition(arr, low, high);
-			// 对key左边的数快排
-			quickSort(arr, low, pivotloc - 1);
-			// 对key右边的数快排
-			quickSort(arr, pivotloc + 1, high);
+			// 分区操作，将一个数组分成两个分区，返回分区界限索引
+			int index = partition(arr, low, high);
+			// 对左分区进行快排
+			quickSort(arr, low, index - 1);
+			// 对右分区进行快排
+			quickSort(arr, index + 1, high);
 		}
+	}
+
+	public static void quickSort(int[] arr) {
+		int low = 0;
+		int high = arr.length - 1;
+		quickSort(arr, low, high);
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 9, 3, 12, 7, 8, 3, 4, 65, 22 };
+		// 给出无序数组
+		int arr[] = { 72, 6, 57, 88, 60, 42, 83, 73, 48, 85 };
+		// 输出无序数组
 		System.out.println(Arrays.toString(arr));
-		new QuickSort().quickSort(arr, 0, arr.length - 1);
+		// 快速排序
+		quickSort(arr);
+		// 输出有序数组
 		System.out.println(Arrays.toString(arr));
 	}
+
 }
